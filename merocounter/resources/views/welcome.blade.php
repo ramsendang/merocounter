@@ -5,47 +5,63 @@
 
 @section('main_content')
 <!-- ------------------------------------------------------------------------------------------------------  -->
-<div class="banner">
-    <div class="banner_image_container">
+<div class="row d-flex justify-content-center align-items-center vh-100" style="background-image: url('/images/banner.jpg'); ">
+    <!-- <div class="banner_image_container">
         <img src="images/banner.jpg" class="banner_image" alt="">
-    </div>
-    <div class="banner_form">
+    </div> -->
+    <div class="row border border-light rounded-lg p-2">
         <form action="/searchbus" method="post">
             @csrf
-            <div class="form_container">
-                <div class="item form_heading">
-                    <p>Searcg for Available Ticket</p>
-                </div>
-                <div class="item from__place">
-                    <label for="bus">
-                        From
-                    </label>
-                    <select name="from" id="">
-                        <option value="Kathmandu">Kathmandu</option>
-                        <option value="Pokhara">Pokhara</option>
-                        <option value="Biratnagar">Biratnagar</option>
-                        <option value="Nepalgung">Nepalgung</option>
-                    </select>
-                </div>
-                <div class="item to__place">
-                    <label for="to">
-                        To
-                    </label>
-                    <select name="to" id="">
-                        <option value="Kathmandu">Kathmandu</option>
-                        <option value="Pokhara">Pokhara</option>
-                        <option value="Biratnagar">Biratnagar</option>
-                        <option value="Nepalgung">Nepalgung</option>
-                    </select>
-                </div>
-                <div class="item date__place">
-                    <label for="">
-                        Date
-                    </label>
-                    <input type="date" name="date">
-                </div>
-                <div class="item form__submit">
-                    <input type="submit" value="Search for Ticket">
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-light text-center">Search for Available Ticket</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="item from__place">
+                                <label for="bus"  class="text-light">
+                                    From
+                                </label>
+                                <select name="from" id="">
+                                    <option value="Kathmandu">Kathmandu</option>
+                                    <option value="Pokhara">Pokhara</option>
+                                    <option value="Biratnagar">Biratnagar</option>
+                                    <option value="Nepalgung">Nepalgung</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="item to__place">
+                                <label for="to"  class="text-light">
+                                    To
+                                </label>
+                                <select name="to" id="">
+                                    <option value="Kathmandu">Kathmandu</option>
+                                    <option value="Pokhara">Pokhara</option>
+                                    <option value="Biratnagar">Biratnagar</option>
+                                    <option value="Nepalgung">Nepalgung</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="item date__place">
+                                <label for=""  class="text-light">
+                                    Date
+                                </label>
+                                <input type="date" name="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-primary" value="Search for Ticket">
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
