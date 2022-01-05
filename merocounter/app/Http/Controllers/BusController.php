@@ -145,11 +145,15 @@ class BusController extends Controller
      * @param  \App\Models\Bus  $bus
      * @return \Illuminate\Http\Response
      */
-    public function show(Bus $bus)
-    {
-        $data = Bus::all();
+    public function show(Bus $bus, Request $request)
+    {  
+        $data = Bus::latest();
+        if(request('search')){
+            $data->where('busno', 'like', '%' .request('search'). '%');
+        }
+        
         return view('pages.allbus', [
-            'data' => $data
+            'data' => $data->get()
         ]);
     }
 
@@ -262,6 +266,5 @@ class BusController extends Controller
         $bus->save();
         return redirect('/bus');
     }
-
 
 }

@@ -5,6 +5,26 @@
 
 @section('main_content')
 <div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>Search</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form action="#" method="get">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" name="search" placeholder="Enter bus no">
+                    </div>
+                    <div class="col-lg-1">
+                        <input type="submit" class="btn" value="search">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
     @foreach($data as $busdata)
     <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 p-4">
