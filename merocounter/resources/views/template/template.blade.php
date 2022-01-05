@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_SANDBOX_CLIENT_ID') }}"></script>
 </head>
+
 <body>
     <section class="contact_nav">
         <p>Call US - 460342</p>
@@ -23,11 +24,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav ml-auto">
-                    <li class="nav-item"><a href="/" class="nav-link text-light">Home</a></li>
-                    <li class="nav-item"><a href="/leaderboard" class="nav-link text-light">Leaderboard</a></li>
-                    <li class="nav-item"><a href="/allbus" class="nav-link text-light">All Buses</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link text-light">About Us</a></li>
-                    <li class="nav-item"><a href="/mybooking" class="nav-link text-light">My Booking</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link {{ Request::path() == '/' ? 'text-danger' : 'text-light'}}">Home</a></li>
+                    <li class="nav-item"><a href="/leaderboard" class="nav-link {{ Request::path() == '/leaderboard' ? 'text-danger' : 'text-light'}}">Leaderboard</a></li>
+                    <li class="nav-item"><a href="/allbus" class="nav-link {{ Request::path() == '/allbus' ? 'text-danger' : 'text-light'}}">All Buses</a></li>
+                    @if(session()->has('loggedUser'))
+                    <li class="nav-item"><a href="/mybooking" class="nav-link {{ Request::path() == '/mybooking' ? 'text-danger' : 'text-light'}}">My Booking</a></li>
+                    @endif
                     @if(session()->has('loggedVendor'))
                     <li class="nav-item"><a href="/dashbord" class="nav-link text-light">My Dashboard</a></li>
                     @else
