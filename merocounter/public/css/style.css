@@ -1,0 +1,604 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+.contact_nav {
+    padding: 8px 20px;
+}
+.contact_nav p {
+    text-align: end;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 10vh;
+    align-items: center;
+    background-color: #441820;
+}
+
+nav .logo a {
+    text-decoration: none;
+    font-family: "Pacifico", cursive;
+    color: green;
+    font-weight: 900;
+    font-size: 20px;
+    position: relative;
+}
+
+nav .logo a::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    width: 23px;
+    height: 1.5px;
+    background-color: orange;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+nav .logo a::after {
+    content: "";
+    width: 122px;
+    height: 1px;
+    background-color: yellow;
+    position: absolute;
+    bottom: -80%;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+nav .nav_menu ul {
+    display: flex;
+}
+nav .nav_menu ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+nav .nav_menu ul li a {
+    text-decoration: none;
+    color: green;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+}
+.burger {
+    display: none;
+}
+
+.burger a {
+    font-size: 24px;
+    color: green;
+}
+
+/*-- ------------------------------------------------------------------------------------------------------  --*/
+
+/* ----------------banner section------------------  */
+
+.banner {
+    width: 100%;
+    position: relative;
+}
+.banner_image_container {
+    width: 100%;
+    height: 90vh;
+}
+
+.banner_image {
+    width: 100%;
+    height: 100%;
+}
+
+.banner_form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 3px #de7f90;
+}
+form {
+    width: 100%;
+    height: 100%;
+}
+
+.form_container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: [col-start] 1fr [col-2]1fr [col-end];
+    grid-template-areas:
+        "header header header"
+        "vehicles vehicles vehicles"
+        "from to date"
+        "button button button";
+    align-items: center;
+}
+
+.item {
+    padding: 0 4px;
+    margin-bottom: 8px;
+}
+
+.form_heading {
+    grid-area: header;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+.vehicle_option {
+    grid-area: vehicles;
+}
+
+.from__place {
+    grid-area: from;
+}
+
+.to__place {
+    grid-area: to;
+}
+.date__place {
+    grid: date;
+}
+.form__submit {
+    grid-area: button;
+}
+input[type="text"],
+input[type="submit"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px 4px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 4px;
+    outline: none;
+    background-color: none;
+}
+select {
+    width: 100%;
+    padding: 8px 4px;
+}
+
+/* --------x--------banner section---------x--------------  */
+
+/*-- ------------------------------------------------------------------------------------------------------  --*/
+
+/* ----------------for top rated -------------------------- */
+
+.toprating_heading {
+    padding: 8px 60px;
+    text-transform: capitalize;
+    font-size: 30px;
+}
+.top_rated {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* --------x--------for top rated ------------x------------ */
+
+/* for about section  */
+
+#about {
+    border: 1px solid black;
+}
+
+.inner_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.about_text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 400px;
+}
+.about_text p {
+    padding: 40px 0 10px 0;
+}
+
+.about_image {
+    border: 1px solid black;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    margin: 10px 0;
+    margin-right: 40px;
+    overflow: hidden;
+}
+
+.about_logo {
+    width: 100%;
+    height: 100%;
+}
+/*-- ------------------------------------------------------------------------------------------------------  --*/
+
+/* for banner two section  */
+.banner_two {
+    width: 100%;
+    height: 300px;
+}
+.banner_two_image {
+    width: 100%;
+    height: 100%;
+}
+
+/* services section  */
+
+.services {
+    padding-bottom: 40px;
+}
+
+.service_inner_container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.service_detail {
+    width: 300px;
+    height: 300px;
+}
+.service_image {
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------vendor login form ------------------------ */
+
+.vendor_login_container {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+}
+
+.login_form_container {
+    height: 80%;
+    width: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 3px 3px 3px 3px #de7f90;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.login_form_container form {
+    padding: 20px;
+}
+
+.vendor_login_form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.vendor_login_form_container .vendor_login_title {
+    margin-bottom: 40px;
+}
+.vendor_login_form_container .vendor_login_title p {
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-size: 25px;
+}
+
+.vendor_login_form_container input {
+    margin: 20px 0;
+}
+
+.vendor_login_button input {
+    font-family: "Pacifico", cursive;
+    background-color: none;
+}
+.user__icon {
+    color: green;
+    padding: 0 20px;
+}
+/* -------x---------vendor login form ----------x-------------- */
+
+/*-- ------------------------------------------------------------------------------------------------------  --*/
+
+/* ----------------vendor register form ------------------------ */
+.vendor_register_container {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.vendor_register_container .register_form_container {
+    width: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 3px 3px #de7f90;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container {
+    display: grid;
+    grid-template-columns: [col-start] 1fr [col-2]1fr [col-end];
+    grid-template-areas:
+        "title title"
+        "firstname lastname"
+        "name name"
+        "email email"
+        "mobile mobile"
+        "password password"
+        "gender gender"
+        "term term"
+        "register register"
+        "login  login";
+    padding: 20px;
+}
+
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .vendor_register_title {
+    grid-area: title;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .vendor_name {
+    grid-area: name;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .vendor_register_login_link {
+    grid-area: login;
+}
+
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .firstname {
+    grid-area: firstname;
+}
+
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .middlename {
+    grid-area: middlename;
+}
+
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .lastname {
+    grid-area: lastname;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .gender {
+    grid-area: gender;
+    display: grid;
+    grid-template-columns: [col-start] 1fr [col-2]1fr [col-3]1fr [col-end];
+    grid-template-areas: "title title title" "male female other";
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .gender
+    .gender_title {
+    grid-area: title;
+    width: 100%;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .gender
+    .gender_item {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-right: 2px;
+    padding: 4px;
+    border-radius: 5px;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .gender
+    input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin: 0 10px;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .gender
+    label {
+    padding: 0 10;
+}
+
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .email {
+    grid-area: email;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .password {
+    grid-area: password;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .vendor_register_submit {
+    grid-area: register;
+}
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .vendor_register_submit
+    input {
+    font-family: "Pacifico", cursive;
+    background-color: green;
+}
+
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .mobile {
+    grid-area: mobile;
+}
+
+.vendor_register_container
+    .register_form_container
+    .vendor_register_form_container
+    .terms_and_condition {
+    grid-area: term;
+}
+
+.validation_error {
+    color: red;
+    font-size: 12px;
+    padding: 2px;
+}
+/* --------x--------vendor register form -----------x------------- */
+
+/* for my booking page  */
+
+.mybooking {
+    min-height: 100vh;
+}
+
+.mybooking h2 {
+    text-align: center;
+    padding: 20px;
+}
+.mybooking hr {
+    padding: 10px;
+}
+.mybooking_container table,
+.mybooking_container table tr,
+.mybooking_container table tr th,
+.mybooking_container table tr td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.mybooking_container table {
+    margin: 0 auto;
+}
+
+.mybooking_container table tr th,
+.mybooking_container table tr td {
+    padding: 10px 20px;
+}
+
+/* for leader board  */
+.leaderboard {
+    min-height: 100vh;
+}
+
+/*-- ------------------------------------------------------------------------------------------------------  --*/
+
+/*----------------- for footer ---------------------------- */
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+    height: 10vh;
+    align-items: center;
+    background-color: #441820;
+}
+footer .nav_menu ul {
+    display: flex;
+}
+footer .nav_menu ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+footer .nav_menu ul li a {
+    text-decoration: none;
+    color: green;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+}
+
+/*----------x------- for footer --------------x--------- */
+
+/* for map  */
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 400px) {
+    .form_container {
+        display: flex;
+        flex-direction: column;
+    }
+    .item {
+        width: 100%;
+    }
+    .banner_form {
+        width: 280px;
+        height: 300px;
+    }
+    * {
+        font-size: 12px;
+    }
+    footer .nav_menu ul li {
+        list-style: none;
+        margin: 0 10px;
+    }
+    footer .nav_menu ul li a {
+        font-size: 8px;
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    nav .nav_menu {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
