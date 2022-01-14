@@ -68,8 +68,7 @@ class BookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Booking $booking)
-    {
-        $request->validate([
+    {   $request->validate([
             "fname" =>"required",
             "lname"=>"required",
             "email" => "required",
@@ -84,7 +83,6 @@ class BookingController extends Controller
             "time"=>"required",
             "price"=>"required",
         ]);
-
         $booking->fname = request('fname');
         $booking->lname = request('lname');
         $booking->email = request('email');

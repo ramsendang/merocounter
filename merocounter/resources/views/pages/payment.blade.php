@@ -30,15 +30,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <a class="btn btn-primary m-3 text-center" href="{{ route('processTransaction') }}">Pay {{$totalprice}}</a>
-                @if(\Session::has('error'))
-                    <div class="alert alert-danger">{{ \Session::get('error') }}</div>
-                    {{ \Session::forget('error') }}
-                @endif
-                @if(\Session::has('success'))
-                    <div class="alert alert-success">{{ \Session::get('success') }}</div>
-                    {{ \Session::forget('success') }}
-                @endif
+                <a class="btn btn-primary m-3 text-center" href="{{ route('processTransaction') }}">Confirm Payment</a>
             </div>
         </div>
     </div>

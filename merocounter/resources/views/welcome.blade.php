@@ -6,9 +6,6 @@
 @section('main_content')
 <!-- ------------------------------------------------------------------------------------------------------  -->
 <div class="row d-flex justify-content-center align-items-center vh-100" style="background-image: url('/images/banner.jpg'); ">
-    <!-- <div class="banner_image_container">
-        <img src="images/banner.jpg" class="banner_image" alt="">
-    </div> -->
     <div class="row border border-light rounded-lg p-2">
         <form action="/searchbus" method="post">
             @csrf
@@ -67,12 +64,8 @@
         </form>
     </div>
 </div>
-
-
 <!-- ------------------------------------------------------------------------------------------------------  -->
-
 <!-- ------------------------------------------------------------------------------------------------------  -->
-
 <div class="container">
     <div class="toprating_heading">
         Top Rated bus of the week
@@ -116,8 +109,6 @@
         </div>
     </div>
 </div>
-
-
 <!-- for about us section  -->
 <div class="about_section" id="about">
     <div class="inner_container">
@@ -135,12 +126,10 @@
         </div>
     </div>
 </div>
-
 <!-- for add banner section  -->
 <div class="banner_two">
     <img src="/images/banner_2.jpg" alt="" class="banner_two_image">
 </div>
-
 <!-- for our services  -->
 <div class="services">
     <div class="toprating_heading">
@@ -158,12 +147,10 @@
         </div>
     </div>
 </div>
-
 <!-- for add banner section  -->
 <div class="banner_two">
     <img src="/images/banner3.jpg" alt="" class="banner_two_image">
 </div>
-
 <!-- for our payment partner  -->
 <div class="services">
     <div class="toprating_heading">

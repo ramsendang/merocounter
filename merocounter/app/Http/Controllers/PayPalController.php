@@ -14,7 +14,7 @@ class PayPalController extends Controller
      */
     public function createTransaction()
     {
-        return view('transaction');
+        return view('pages.transection');
     }
 
     /**
@@ -27,7 +27,6 @@ class PayPalController extends Controller
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
-
         $response = $provider->createOrder([
             "intent" => "CAPTURE",
             "application_context" => [
@@ -43,7 +42,6 @@ class PayPalController extends Controller
                 ]
             ]
         ]);
-
         if (isset($response['id']) && $response['id'] != null) {
 
             // redirect to approve href
@@ -52,15 +50,9 @@ class PayPalController extends Controller
                     return redirect()->away($links['href']);
                 }
             }
-
-            return redirect()
-                ->route('createTransaction')
-                ->with('error', 'Something went wrong.');
-
+            return redirect()->route('createTransaction')->with('error', 'Something went wrong.');
         } else {
-            return redirect()
-                ->route('createTransaction')
-                ->with('error', $response['message'] ?? 'Something went wrong.');
+            return redirect()->route('createTransaction')->with('error', $response['message'] ?? 'Something went wrong.');
         }
     }
 

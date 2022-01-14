@@ -195,7 +195,8 @@ class BusController extends Controller
     public function search(Request $request){
         $departure_from = request('from');
         $destination_to= request('to');
-        $route = DB::select("select * from routes where destination_from ='".$departure_from."' AND destination_to='".$destination_to."'") ;
+        $route = DB::select("select * from routes where destination_from ='".$departure_from."' AND 
+        destination_to='".$destination_to."'") ;
         if($route !=[]){
             foreach($route as $routedetails){
                 $routeid= $routedetails->id;
@@ -232,18 +233,9 @@ class BusController extends Controller
             "busno" =>"required",
             "busname"=>"required",
             "busdriver" => "required",
-            "abusdriver" => "required",
-            "brand" => "required",
-            "busimg" => "required",
-            "billbook"=> "required",
-            "insurence" => "required",
-            "licen" => "required",
-            "condition" => "required",
-            "totalseat" => "required",
-            "status"=>"required",
-            "price"=>"required",
-            "date"=>'required',
-            "time"=>'required'
+            "abusdriver" => "required","brand" => "required","busimg" => "required","billbook"=> "required",
+            "insurence" => "required","licen" => "required","condition" => "required","totalseat" => "required",
+            "status"=>"required","price"=>"required","date"=>'required',"time"=>'required'
         ]);
 
         $bus->id = request('id');

@@ -9,7 +9,7 @@
     <h2>My Booking</h2>
     <hr>
     <div class="mybooking_container">
-        <table>
+        <table class="table table-info">
             <tr>
                 <th>Ticket No.</th>
                 <th>Full Name</th>
