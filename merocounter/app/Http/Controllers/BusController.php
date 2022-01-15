@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bus;
 use App\Models\Route;
+Use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -147,6 +148,7 @@ class BusController extends Controller
      */
     public function show(Bus $bus, Request $request)
     {  
+        
         $data = Bus::latest();
         if(request('search')){
             $data->where('busno', 'like', '%' .request('search'). '%');
@@ -257,6 +259,36 @@ class BusController extends Controller
         $bus->routetime= request('time');
         $bus->save();
         return redirect('/bus');
+    }
+
+    public function reviewForm(Bus $bus){
+        return view('pages.review', [
+            'bus' => $bus,
+        ]);
+    }
+
+    public function storeReview(Request $request, Review $review){
+        $request->validate([
+            'user_id'=>'required',
+            'rating'=>'required',
+            'review'=>"required",
+        ]);
+        
+        Review::create([
+            "user_id" =>request('user_id'),
+            "busno"=>request('busno'),
+            "rating"=>request('rating'),
+            "review"=>request('review')
+        ]);
+        return redirect('/allbus');
+    }
+
+    public function leaderboard(){
+        $data = DB::select("select * from buses order by rating desc");
+        return view('pages.leaderboard', [
+            'data' => $data
+        ]);
+
     }
 
 }

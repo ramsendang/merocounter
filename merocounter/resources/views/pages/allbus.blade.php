@@ -29,11 +29,9 @@
     <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 p-4">
                 <div class="row">
-                    <h3>Rank {{$busdata->id}} </h3>
-                </div>
-                <div class="row">
                     <p>  
                         <?php
+                        
                         $star = $busdata->rating;
                         for($i=0; $i<$star; $i++){
                             echo "⭐";
@@ -71,9 +69,13 @@
                         </a>
                     </div>
                     <div class="col-lg-6">
+                        @if(session()->has('loggedUser'))
                         <a href="/allbus/bus/{{$busdata->id}}" class="btn btn-primary">
                             Write a review
                         </a>
+                        @else
+                        <a href="/login" class="btn btn-primary">Login to Rate</a>
+                        @endif
                     </div>
                 </div>
             </div>

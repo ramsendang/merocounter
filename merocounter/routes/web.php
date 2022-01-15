@@ -42,6 +42,8 @@ Route::post('/searchbus', [BusController::class, 'search']);
 Route::get('/assingroute/{bus}', [BusController::class, 'assignRoute']);
 Route::post('/addroute/{bus}', [BusController::class, 'storeRoute']);
 Route::get('/allbus', [BusController::class, 'show']);
+Route::get('/allbus/bus/{bus}',[BusController::class, 'reviewForm']);
+Route::post('/review', [BusController::class, 'storeReview']);
 
 Route::get('/busroutes', [RouteController::class, 'index']);
 Route::get('/addroute', [RouteController::class, 'create']);
@@ -74,9 +76,7 @@ Route::get('/mybooking', function(){
 
 Route::get('/mybooking/pay/{booking}',[PaymentController::class, 'index']);
 
-Route::get('/leaderboard', function(){
-    return view('pages.leaderboard');
-});
+Route::get('/leaderboard',[BusController::class, 'leaderboard']);
 
 
 Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
